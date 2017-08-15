@@ -1,0 +1,23 @@
+{
+    "name": "giep-br/atune",
+    "description": "A module for parse configuration files",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Georgio Barbosa",
+            "email": "georgio.barbosa@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">5.4"
+    },
+    "require-dev": {
+        "codeception/codeception": "*",
+        "codeception/aspect-mock": "^0.5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Atune\\": "src"
+        }
+    }
+}
