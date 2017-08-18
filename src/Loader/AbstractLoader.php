@@ -1,44 +1,63 @@
 <?php
-namespace Atune\Loader;
+namespace Tunny\Loader;
 
-abstract class AbstractLoader
+use Tunny\Tunny;
+
+abstract class AbstractLoader implements LoaderInterface
 {
     private $file;
-    private $content;
     private $value_tree;
+    private $conf;
+    protected $content;
 
     public function __construct($file)
     {
-        if (is_array($file)) {
-            $this->loadMultipleFiles($file);
-        } else {
-            $this->loadSingleFile($file);
-        }
+        $this->file = $file;
+        $this->conf = null;
+        $this->bootstrap($file);
     }
 
-    private function loadSingleFile(string $file)
+    public function getConf()
     {
-
+        return $this->conf;
     }
 
-    private function loadMultipleFiles(array $files)
+    protected function parse($content)
     {
-        foreach ($files as $k => $f) {
-            $ext = $this->extractExtension();
-            $this->content[] = $this->readFile($f);
-        }
+        return $content;
     }
 
-    private function checkFile($file)
+    protected function readFile($file)
+    {
+        $this->checkFile($file);
+        return file_get_contents($file);
+    }
+
+    protected function checkFile($file)
     {
         if(!is_file($file)) {
-            return false;
+            throw new \InvalidArgumentException("Invalid file path {$file}.");
         }
         return true;
     }
 
-    private function readFile()
+    private function bootstrap($file)
     {
+        if (!is_array($file)) {
+            $file = array($file);
+        }
 
+        $this->loadMultipleFiles($file);
+    }
+
+    private function loadMultipleFiles(array $files)
+    {
+        $out = array();
+        foreach ($files as $k => $f) {
+            $file_content = $this->readFile($f);
+            $out = Tunny::array_overlay($out, $this->parse($file_content));
+        }
+
+        $this->conf = $out;
     }
 }
