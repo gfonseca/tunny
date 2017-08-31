@@ -1,4 +1,6 @@
-# Atune
+# Tunny
+
+[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "T u n n y"
 
 ## A simple configuration file parse
 
