@@ -27,8 +27,12 @@ class Config implements \ArrayAccess{
         return print_r($this->conf, true);
     }
 
-    public function get($attr)
+    public function get($attr=null)
     {
+        if(!$attr) {
+            return $this->conf;
+        }
+
         if(isset($this->conf[$attr])) {
             return $this->conf[$attr];
         }
