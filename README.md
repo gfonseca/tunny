@@ -2,7 +2,7 @@
 
 ![T u n n y](https://raw.githubusercontent.com/gfonseca/tunny/master/tunny.png "T u n n y")
 
-![travis-ci](https://travis-ci.org/gfonseca/tunny.svg?branch=master "travis-ci")
+[]![travis-ci](https://travis-ci.org/gfonseca/tunny.svg?branch=master "travis-ci")(https://travis-ci.org/gfonseca/tunny)]
 
 
 ## A simple configuration file parse
