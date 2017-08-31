@@ -5,4 +5,4 @@ before_script:
   - composer install
 script:
   - echo " ><(((*> " && php vendor/bin/codecept run
-  - vendor/bin/codecept run unit --coverage --coverage-xml --coverage-json
+  - vendor/bin/codecept run unit --coverage --coverage-xml
