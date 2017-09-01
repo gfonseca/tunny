@@ -1,6 +1,7 @@
 # Tunny
 
 ![T u n n y](https://raw.githubusercontent.com/gfonseca/tunny/master/tunny.png "T u n n y")
+
 [![tunny:master](https://travis-ci.org/gfonseca/tunny.svg?branch=master "T u n n y")](https://travis-ci.org/gfonseca/tunny)
 
 ## A simple configuration file parse
@@ -18,7 +19,7 @@ return array(
 );
 ```
 
-network_json.json
+system_json.json
 ```json
 {
 "system": {
@@ -28,7 +29,7 @@ network_json.json
 }
 ```
 
-system_ini_file.ini
+network_ini_file.ini
 ```ini
 [system]
 cpu = Intel
