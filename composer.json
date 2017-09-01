@@ -1,7 +1,9 @@
 {
-    "name": "giep-br/tunny",
+    "name": "gfonseca/tunny",
     "description": "A module for parse configuration files",
     "type": "library",
+    "homepage" : "https://gfonseca.github.io/tunny",
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Georgio Barbosa",
@@ -9,7 +11,7 @@
         }
     ],
     "require": {
-        "php": ">=5.4",
+        "php": ">= 5.4",
         "symfony/yaml": "3.3.6"
     },
     "require-dev": {

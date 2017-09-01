@@ -6,6 +6,11 @@
 
 ## A simple configuration file parse
 
+### Instalation:
+```bash
+$ composer require gfonseca/tunny
+```
+
 ### Example:
 system_php_array.php
 ```php
