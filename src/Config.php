@@ -64,4 +64,16 @@ class Config implements \ArrayAccess{
     {
         return array();
     }
+
+    public static function make($files)
+    {
+        if(!is_array($files)) {
+            $files = array($files);
+        }
+        $loaders = array();
+        foreach ($files as $k => $f) {
+            $loaders[] = Tunny::parseFileExtension($f);
+        }
+        return new static($loaders);
+    }
 }

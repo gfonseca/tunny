@@ -26,20 +26,7 @@ abstract class Tunny {
         return $a1;
     }
 
-    public static function make($files)
-    {
-        if(!is_array($files)) {
-            $files = array($files);
-        }
-        $loaders = array();
-        foreach ($files as $k => $f) {
-            $loaders[] = self::parseFileExtension($f);
-        }
-
-        return new Config($loaders);
-    }
-
-    protected static function parseFileExtension($file)
+    public static function parseFileExtension($file)
     {
         $loader_map = array(
             self::TUNNY_EXT_JSON => "\\Tunny\\Loader\\JsonLoader",
@@ -48,7 +35,8 @@ abstract class Tunny {
             self::TUNNY_EXT_INI => "\\Tunny\\Loader\\IniLoader",
         );
 
-        $ext = end(explode(".", $file));
+        $split_file_name = explode(".", $file);
+        $ext = end($split_file_name);
 
         if(isset($loader_map[$ext])) {
             return new $loader_map[$ext]($file);
