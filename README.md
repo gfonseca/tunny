@@ -68,7 +68,7 @@ $conf = $tunny->get();
 print_r($conf);
 ```
 
-### Output:
+**output**
 ```php
 Array
 (
@@ -91,4 +91,16 @@ Array
         )
 
 )
+```
+
+### Defining default values
+```php
+class SampleDefaults extends \Tunny\Config
+{
+    protected function defaults(){
+        return array(
+            "System" => "Ubuntu"
+        );
+    }
+}
 ```
