@@ -56,7 +56,7 @@ sample.php
 
 require __DIR__."/../vendor/autoload.php";
 
-$tunny = \Tunny\Tunny::make([
+$tunny = \Tunny\Config::make([
     "./system_php_array.php",
     "./network_json.json",
     "./system_ini_file.ini",
